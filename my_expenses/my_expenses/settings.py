@@ -1,21 +1,13 @@
 """
 Django settings for my_expenses project.
 """
-import os
-from pathlib import Path
-from dotenv import load_dotenv
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
+from pathlib import Path
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# Load environment variables from .env file
-load_dotenv(BASE_DIR / '.env')
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('SECRET_KEY')
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DEBUG', 'False') == 'True'
+SECRET_KEY = 'django-insecure-^b=2%c4$)!)vqfvr$bj0e#$ovt&p4ia8qg!2ru01e&=+m5#2ag'
+DEBUG = True
 ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
@@ -94,6 +86,6 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
+EMAIL_HOST_USER = 'your_gmail@gmail.com'        # Replace with your Gmail
+EMAIL_HOST_PASSWORD = 'your_app_password_here'  # Use 16-char Gmail App Password
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
